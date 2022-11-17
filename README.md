@@ -78,16 +78,21 @@ make prereq
 ``` bash
 make menuconfig
 ```
-#### 操作规则
+
+## 操作规则
+
 <br />
 Enter 进入子菜单/确定 空格切换软件包的状态 【*】表示编译进固件包，【M】表示编译成安装文件，【】为不做操作<br />
 左右键切换最下面的 <Select> < Exit > < Help > < Save > < Load ><br />
 < Exit > 返回上级菜单/退出<br />
 ## 环境（不输这行会报错）
+<br />
 来源：https://post.smzdm.com/p/a0d6gmzr/
+<br />
 ``` bash
 source /etc/environment
 ```
+<br />
 ## 编译
 
 ``` bash
