@@ -79,9 +79,10 @@ make prereq
 make menuconfig
 ```
 #### 操作规则
-Enter 进入子菜单/确定 空格切换软件包的状态 【*】表示编译进固件包，【M】表示编译成安装文件，【】为不做操作
-左右键切换最下面的 <Select> < Exit > < Help > < Save > < Load >
-< Exit > 返回上级菜单/退出
+<br />
+Enter 进入子菜单/确定 空格切换软件包的状态 【*】表示编译进固件包，【M】表示编译成安装文件，【】为不做操作<br />
+左右键切换最下面的 <Select> < Exit > < Help > < Save > < Load ><br />
+< Exit > 返回上级菜单/退出<br />
 ## 环境（不输这行会报错）
 来源：https://post.smzdm.com/p/a0d6gmzr/
 ``` bash
@@ -93,15 +94,16 @@ source /etc/environment
 make -j8 download V=s
 make -j8 V=s  #第一次更推荐你输入make -j1 V=s进行编译
 ```
-
+<br />
 ## 编译时遇到的问题
 编译失败提示
-
+<br />
 ``` bash
 {standardinput}: Fatal error: can't close fs/namespace.o: No space left on device
 ```
 找到出错源头，可发现时空间不足
 打开ubuntu，ubuntu也提示磁盘不足，验证想法正确，对虚拟机进行扩大磁盘操作解决
+<br />
 
 ``` bash
 make menuconfig
@@ -109,24 +111,24 @@ make menuconfig
 $make menuconfig
 Your display is toosmall to run Menuconfig!
 ```
-观察提示，是ssh连接的ubuntu，xshell的窗口太小了，显示不全配置菜单，放大窗口就可以了
+###### 观察提示，是ssh连接的ubuntu，xshell的窗口太小了，显示不全配置菜单，放大窗口就可以了
 
-在使用ubuntu apt-get 时，我遇到过下列错误提示
+#### 在使用ubuntu apt-get 时，我遇到过下列错误提示
 
 ``` bash
 E: 无法获得锁 /var/lib/dpkg/lock - open (11: 资源暂时不可用)E: 无法锁定管理目录(/var/lib/dpkg/)，是否有其他进程正占用它？
 ```
-通过下列方法解决
+###### 通过下列方法解决
 
 ``` bash
 sudo rm /var/cache/apt/archives/locksudo rm /var/lib/dpkg/lock
 ```
-再次install软件，提示：
+#### 再次install软件，提示：
 
 ``` bash
 E: dpkg 被中断，您必须手工运行 sudo dpkg --configure -a 解决此问题
 ```
-执行
+###### 执行
 
 ``` bash
 sudo dpkg --configure -a
