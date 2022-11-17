@@ -99,7 +99,7 @@ source /etc/environment
 
 ``` bash
 make -j8 download V=s
-make -j8 V=s  #第一次更推荐你输入make -j1 V=s进行编译
+make -j8 V=s  #第一次更推荐你输入 make -j1 V=s 进行编译 二次编译可使用 make -j$(($(nproc) + 1)) V=s 加快编译速度
 ```
 
 ## 编译时遇到的问题
