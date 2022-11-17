@@ -153,7 +153,7 @@ cd lede
 git pull
 ./scripts/feeds update -a && ./scripts/feeds install -a
 make defconfig
-make -j8 download
+make -j8 download V=s
 make -j$(($(nproc) + 1)) V=s
 ```
 ### 如果需要更改：
@@ -165,7 +165,7 @@ git pull
 ./scripts/feeds update -a && ./scripts/feeds install -a
 rm -rf ./tmp && rm -rf .config
 make menuconfig
-make -j8 download
+make -j8 download V=s
 make -j$(($(nproc) + 1)) V=s
 ```
 
