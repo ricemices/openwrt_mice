@@ -140,7 +140,36 @@ E: dpkg 被中断，您必须手工运行 sudo dpkg --configure -a 解决此问�
 ``` bash
 sudo dpkg --configure -a
 ```
-再次进行安装
+
+## 第二次编译
+
+记得先要输source /etc/environment
+
+### 如果不需要更改配置：
+
+``` bash
+source /etc/environment
+cd lede
+git pull
+./scripts/feeds update -a && ./scripts/feeds install -a
+make defconfig
+make -j8 download
+make -j$(($(nproc) + 1)) V=s
+```
+### 如果需要更改：
+
+``` bash
+source /etc/environment
+cd lede
+git pull
+./scripts/feeds update -a && ./scripts/feeds install -a
+rm -rf ./tmp && rm -rf .config
+make menuconfig
+make -j8 download
+make -j$(($(nproc) + 1)) V=s
+```
+
+
 
 ## 主题配置
 #### 如何编译Openwrt主题源码
