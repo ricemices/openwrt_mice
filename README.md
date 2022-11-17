@@ -141,3 +141,42 @@ E: dpkg 被中断，您必须手工运行 sudo dpkg --configure -a 解决此问�
 sudo dpkg --configure -a
 ```
 再次进行安装
+
+## 主题配置
+#### 如何编译Openwrt主题源码
+#### 进入 OpenWRT/package/lean 或者其他目录
+
+#### Lean源码
+
+``` bash
+cd lede/package/lean
+rm -rf luci-theme-argon
+git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git
+make menuconfig #choose LUCI->Theme->Luci-theme-argon
+make -j1 V=s
+```
+#### Openwrt 官方源码
+
+``` bash
+cd openwrt/package
+git clone https://github.com/jerrykuku/luci-theme-argon.git
+make menuconfig #choose LUCI->Theme->Luci-theme-argon
+make -j1 V=s
+```
+### 如何安装
+#### Lean源码
+
+``` bash
+wget --no-check-certificate https://github.com/jerrykuku/luci-theme-argon/releases/download/v1.7.0/luci-theme-argon_1.7.0-20200909_all.ipk
+opkg install luci-theme-argon*.ipk
+```
+
+#### For openwrt official 19.07 Snapshots LuCI master
+
+``` bash
+wget --no-check-certificate https://github.com/jerrykuku/luci-theme-argon/releases/download/v2.2.5/luci-theme-argon_2.2.5-20200914_all.ipk
+opkg install luci-theme-argon*.ipk
+```
+
+
+
