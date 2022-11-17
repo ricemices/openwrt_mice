@@ -101,9 +101,9 @@ source /etc/environment
 make -j8 download V=s
 make -j8 V=s  #第一次更推荐你输入make -j1 V=s进行编译
 ```
-<br />
+
 ## 编译时遇到的问题
-编译失败提示
+<p>编译失败提示</p>
 <br />
 ``` bash
 {standardinput}: Fatal error: can't close fs/namespace.o: No space left on device
